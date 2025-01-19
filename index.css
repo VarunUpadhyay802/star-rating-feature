@@ -1,0 +1,8 @@
+#star-rating {
+    padding: 20px;
+}
+.star {
+    width: 40px;    /* Makes star bigger */
+    height: 40px;
+    cursor: pointer; /* Shows hand cursor on hover */
+}
