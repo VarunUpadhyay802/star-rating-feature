@@ -1,14 +1,25 @@
- // First, let's just make sure we can select our stars
- function StarRating() {
-    // Get all our stars
+function StarRating() {
     const stars = document.querySelectorAll('.star');
-    
-    // Let's check if we got them
     console.log("Stars found:", stars.length);
-    
-    // Color the first star yellow just to test
-    const firstPath = stars[0].querySelector('path');
-    firstPath.style.fill = '#FFD700';  // This is gold/yellow color
+
+  
+    let currentRating = 0;    // What star is clicked
+    let tempRating = 0;       // What star is being hovered
+
+    // Add this to make stars respond to hover
+    stars.forEach((star, index) => {
+        star.addEventListener('mouseenter', () => {
+            console.log("Hovering over star:", index + 1);
+            const path = star.querySelector('path');
+            path.style.fill = '#FFD700';
+        });
+
+        star.addEventListener('mouseleave', () => {
+            console.log("Mouse left star:", index + 1);
+            const path = star.querySelector('path');
+            path.style.fill = '#E5E7EB';  // Gray color
+        });
+    });
 }
 
  // Run when page loads
